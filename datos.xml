@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="viewer_simple.xsl" type="text/xsl"?>
+<?xml-stylesheet href="vistas.xslt" type="text/xsl"?>
 <redesComputadoras>
     <tema id="5" titulo="Características de las Redes de Computadoras">
         <descripcion>Una exploración completa de los fundamentos de la conectividad digital: desde
