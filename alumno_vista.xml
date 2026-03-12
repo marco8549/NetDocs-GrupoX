@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="viewer_simple.xsl"?>
+<!DOCTYPE tema [
+    <!ELEMENT tema (metadata, secciones)>
+    <!ATTLIST tema
+        id CDATA #REQUIRED
+        lang NMTOKEN #REQUIRED>
+
+    <!ELEMENT metadata (titulo, subtitulo)>
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT subtitulo (#PCDATA)>
+
+    <!ELEMENT secciones (seccion+)>
+    <!ELEMENT seccion (bloque+)>
+    <!ATTLIST seccion
+        id CDATA #REQUIRED
+        nombre CDATA #REQUIRED>
+
+    <!ELEMENT bloque (parrafo | lista | tarjetas | tabla)*>
+    <!ATTLIST bloque
+        id CDATA #REQUIRED
+        titulo CDATA #REQUIRED>
+
+    <!ELEMENT parrafo (#PCDATA)>
+    <!ATTLIST parrafo tipo (definicion | nota | texto) "texto">
+
+    <!ELEMENT lista (item+)>
+    <!ATTLIST lista titulo CDATA #IMPLIED>
+    <!ELEMENT item (#PCDATA)>
+
+    <!ELEMENT tarjetas (tarjeta+)>
+    <!ELEMENT tarjeta (parrafo)*>
+    <!ATTLIST tarjeta
+        titulo CDATA #REQUIRED
+        sub CDATA #IMPLIED>
+
+    <!ELEMENT tabla (col+, fila+)>
+    <!ATTLIST tabla titulo CDATA #IMPLIED>
+    <!ELEMENT col EMPTY>
+    <!ATTLIST col nombre CDATA #REQUIRED>
+    <!ELEMENT fila (c+)>
+    <!ELEMENT c (#PCDATA)>
+]>
+
+<tema id="T5" lang="es">
+    <metadata>
+        <titulo>Características de las Redes de Computadoras</titulo>
+        <subtitulo>Una visión integral de las redes que conectan nuestro mundo digital</subtitulo>
+    </metadata>
+
+    <secciones>
+        <seccion id="introduccion" nombre="Introducción">
+            <bloque id="descripcion" titulo="Descripción general">
+                <parrafo>Una exploración completa de los fundamentos de la conectividad digital: desde los conceptos básicos hasta las arquitecturas modernas que sustentan nuestra sociedad interconectada.</parrafo>
+            </bloque>
+        </seccion>
+
+        <seccion id="definicion" nombre="Definición y propiedades">
+            <bloque id="definicion" titulo="¿Qué es una red de computadoras?">
+                <parrafo tipo="definicion">Una red de computadoras es un conjunto de dispositivos interconectados que comparten recursos (impresoras, servidores, almacenamiento) e información de manera eficiente. Esta infraestructura digital es el pilar fundamental que permite la comunicación global instantánea y el intercambio de datos en tiempo real.</parrafo>
+            </bloque>
+            <bloque id="propiedades" titulo="Propiedades clave">
+                <tarjetas>
+                    <tarjeta titulo="Interoperabilidad">
+                        <parrafo>Capacidad crucial de conectar equipos de distintos fabricantes y sistemas operativos sin incompatibilidades.</parrafo>
+                        <parrafo>Ejemplo: Un ordenador Windows puede colaborar perfectamente con un Mac, un servidor Linux y dispositivos Android en la misma red gracias a protocolos estándar y arquitecturas abiertas.</parrafo>
+                    </tarjeta>
+                    <tarjeta titulo="Escalabilidad">
+                        <parrafo>La red debe poder crecer y adaptarse a las necesidades cambiantes de la organización.</parrafo>
+                        <parrafo>Esto significa añadir nuevos usuarios, dispositivos o servicios sin degradar el rendimiento existente.</parrafo>
+                    </tarjeta>
+                    <tarjeta titulo="Seguridad">
+                        <parrafo>Protección integral contra amenazas digitales (malware, phishing, ataques DDoS, ransomware) mediante múltiples capas de defensa.</parrafo>
+                        <parrafo>Firewalls que filtran tráfico no autorizado, cifrado de datos en tránsito, VPNs para conexiones remotas seguras y sistemas de detección de intrusiones.</parrafo>
+                    </tarjeta>
+                </tarjetas>
+            </bloque>
+            <bloque id="importancia" titulo="Importancia en distintos ámbitos">
+                <lista titulo="Ejemplos de aplicaciones">
+                    <item>Teletrabajo: VPNs corporativas seguras.</item>
+                    <item>Educación: Plataformas de videoconferencia para educación a distancia.</item>
+                    <item>IoT: Conexión de miles de millones de dispositivos inteligentes en hogares, ciudades y fábricas.</item>
+                </lista>
+            </bloque>
+        </seccion>
+
+        <seccion id="clasificacion" nombre="Clasificación por alcance">
+            <bloque id="alcance" titulo="Tipos de redes según su alcance">
+                <tabla titulo="Alcance de las redes">
+                    <col nombre="Tipo" />
+                    <col nombre="Alcance" />
+                    <col nombre="Descripción / Ejemplo" />
+                    <fila>
+                        <c>PAN (Red de Área Personal)</c>
+                        <c>Pocos metros (hasta 10m)</c>
+                        <c>Bluetooth conectando un smartwatch, auriculares inalámbricos o teclado al teléfono móvil.</c>
+                    </fila>
+                    <fila>
+                        <c>LAN (Red de Área Local)</c>
+                        <c>Edificios o campus pequeños (1-2 km)</c>
+                        <c>Red Wi-Fi y Ethernet de una oficina, escuela o centro comercial.</c>
+                    </fila>
+                    <fila>
+                        <c>MAN (Red de Área Metropolitana)</c>
+                        <c>Ciudad completa (hasta 50 km)</c>
+                        <c>Red que interconecta varios campus universitarios o una red de fibra óptica municipal.</c>
+                    </fila>
+                    <fila>
+                        <c>WAN (Red de Área Amplia)</c>
+                        <c>Alcance global o continental</c>
+                        <c>Internet o redes corporativas multinacionales conectando oficinas en diferentes países.</c>
+                    </fila>
+                </tabla>
+            </bloque>
+        </seccion>
+
+        <seccion id="conexion" nombre="Tipos de conexión">
+            <bloque id="guiadas" titulo="Conexiones por cable">
+                <parrafo>Ofrecen mayor estabilidad, seguridad y velocidades predecibles, aunque limitan la movilidad.</parrafo>
+                <tarjetas>
+                    <tarjeta titulo="Ethernet (Par Trenzado)">
+                        <parrafo>Estándar dominante en redes LAN; utiliza cables de cobre con pares trenzados que reducen interferencias.</parrafo>
+                        <parrafo>Variantes: Cat5e (1 Gbps), Cat6 (10 Gbps corto), Cat6a/Cat7 (10 Gbps sostenidos).</parrafo>
+                    </tarjeta>
+                    <tarjeta titulo="Fibra Óptica">
+                        <parrafo>Transmite datos mediante pulsos de luz en filamentos de vidrio o plástico ultrapuros. Velocidades de Terabits/s y distancias enormes.</parrafo>
+                        <parrafo>Variantes: Monomodo (largas distancias, +100 km).</parrafo>
+                    </tarjeta>
+                </tarjetas>
+            </bloque>
+            <bloque id="inalambricas" titulo="Conexiones inalámbricas">
+                <parrafo>Utilizan ondas electromagnéticas para transmitir datos sin cables físicos, proporcionando movilidad y flexibilidad.</parrafo>
+                <tarjetas>
+                    <tarjeta titulo="Wi-Fi (Estándares 802.11)" sub="2.4, 5 y 6 GHz">
+                        <parrafo>Permite movilidad dentro del área de cobertura. Susceptible a interferencias y suele tener menor seguridad comparada con cable.</parrafo>
+                        <parrafo>Wi-Fi 6/6E mejora eficiencia en entornos con muchos dispositivos y reduce consumo en IoT.</parrafo>
+                    </tarjeta>
+                </tarjetas>
+            </bloque>
+        </seccion>
+
+        <seccion id="modelos" nombre="Modelos de referencia">
+            <bloque id="osi" titulo="Modelo OSI">
+                <parrafo>Modelo teórico de 7 capas que ayuda a diagnosticar y estructurar la comunicación en red.</parrafo>
+                <lista titulo="Capas principales">
+                    <item>Capa 7 - Aplicación: Navegadores, correo, mensajería.</item>
+                    <item>Capa 4 - Transporte: TCP/UDP, control de flujo y confiabilidad.</item>
+                    <item>Capa 3 - Red: IP, enrutamiento de paquetes.</item>
+                    <item>Capa 2 - Enlace de Datos: Ethernet, Wi‑Fi, direcciones MAC.</item>
+                    <item>Capa 1 - Física: Cables, fibras, frecuencias de radio.</item>
+                </lista>
+            </bloque>
+            <bloque id="tcpip" titulo="Modelo TCP/IP">
+                <parrafo>Modelo práctico usado en Internet que agrupa las capas OSI en 4 niveles: Aplicación, Transporte, Internet y Acceso a la Red.</parrafo>
+                <parrafo>Es el estándar de facto para implementaciones reales.</parrafo>
+            </bloque>
+        </seccion>
+
+        <seccion id="protocolos" nombre="Protocolos de comunicación">
+            <bloque id="transportes" titulo="Protocolos de transporte">
+                <tarjetas>
+                    <tarjeta titulo="TCP">
+                        <parrafo>Orientado a conexión, garantiza entrega y orden de datos con confirmaciones y retransmisiones.</parrafo>
+                        <parrafo>Usos: web (HTTP/HTTPS), correo, SSH, transferencia de archivos.</parrafo>
+                    </tarjeta>
+                    <tarjeta titulo="UDP">
+                        <parrafo>Sin conexión, no garantiza entrega ni orden; muy rápido y de baja latencia.</parrafo>
+                        <parrafo>Usos: streaming, videollamadas, juegos online.</parrafo>
+                    </tarjeta>
+                </tarjetas>
+            </bloque>
+            <bloque id="aplicacion" titulo="Protocolos de aplicación y red">
+                <lista titulo="Protocolos clave">
+                    <item>IP: Direccionamiento lógico y enrutamiento (IPv4/IPv6).</item>
+                    <item>HTTP/HTTPS: Navegación web; HTTPS cifra la comunicación.</item>
+                    <item>SMTP/IMAP/POP3: Envío y recepción de correo electrónico.</item>
+                    <item>DNS: Traduce nombres de dominio a direcciones IP.</item>
+                </lista>
+            </bloque>
+        </seccion>
+
+        <seccion id="seguridad" nombre="Seguridad en redes">
+            <bloque id="mecanismos" titulo="Mecanismos principales">
+                <tarjetas>
+                    <tarjeta titulo="HTTPS (HTTP Secure)">
+                        <parrafo>Cifra la comunicación entre navegador y servidor usando SSL/TLS.</parrafo>
+                    </tarjeta>
+                    <tarjeta titulo="VPN / IPsec">
+                        <parrafo>Crea túneles cifrados sobre redes públicas para acceso remoto seguro.</parrafo>
+                    </tarjeta>
+                    <tarjeta titulo="Firewalls">
+                        <parrafo>Filtran tráfico según reglas para bloquear conexiones no autorizadas.</parrafo>
+                    </tarjeta>
+                    <tarjeta titulo="WPA3">
+                        <parrafo>Estándar más seguro para Wi‑Fi, con cifrado mejorado y protección contra ataques de fuerza bruta.</parrafo>
+                    </tarjeta>
+                </tarjetas>
+            </bloque>
+            <bloque id="defensa" titulo="Defensa en profundidad">
+                <parrafo>La seguridad efectiva combina múltiples capas: cifrado, control de acceso, actualizaciones, formación de usuarios y detección de intrusiones.</parrafo>
+            </bloque>
+        </seccion>
+
+        <seccion id="topologias" nombre="Topologías y modos de conexión">
+            <bloque id="topologias" titulo="Topologías comunes">
+                <tabla titulo="Topologías de red">
+                    <col nombre="Topología" />
+                    <col nombre="Descripción" />
+                    <col nombre="Ventaja" />
+                    <fila>
+                        <c>Bus</c>
+                        <c>Un cable central al que se conectan todos los dispositivos.</c>
+                        <c>Muy barato y fácil de instalar.</c>
+                    </fila>
+                    <fila>
+                        <c>Estrella</c>
+                        <c>Todos los dispositivos se conectan a un punto central (switch).</c>
+                        <c>Fácil de gestionar; si falla un equipo, el resto sigue funcionando.</c>
+                    </fila>
+                    <fila>
+                        <c>Anillo</c>
+                        <c>Los datos circulan en un sentido (o bidireccional) formando un lazo.</c>
+                        <c>Flujo ordenado sin colisiones.</c>
+                    </fila>
+                    <fila>
+                        <c>Malla</c>
+                        <c>Muchos nodos conectados entre sí directamente.</c>
+                        <c>Máxima redundancia y robustez.</c>
+                    </fila>
+                </tabla>
+            </bloque>
+            <bloque id="modos" titulo="Modos de conexión">
+                <tarjetas>
+                    <tarjeta titulo="Orientado a conexión">
+                        <parrafo>Ejemplo: TCP. Establece una sesión antes de enviar datos (triple apretón de manos).</parrafo>
+                    </tarjeta>
+                    <tarjeta titulo="Sin conexión">
+                        <parrafo>Ejemplo: UDP. Envía cada paquete de forma independiente sin confirmar recepción.</parrafo>
+                    </tarjeta>
+                </tarjetas>
+            </bloque>
+        </seccion>
+
+        <seccion id="componentes" nombre="Componentes de hardware">
+            <bloque id="cableados" titulo="Medios cableados">
+                <tarjetas>
+                    <tarjeta titulo="Cable Par Trenzado (Cobre)">
+                        <parrafo>Usado en redes LAN; variantes como Cat5e, Cat6 y Cat6a/7 ofrecen distintas velocidades y distancias.</parrafo>
+                    </tarjeta>
+                    <tarjeta titulo="Fibra Óptica">
+                        <parrafo>Transmite datos con luz; alta capacidad y distancias muy largas.</parrafo>
+                    </tarjeta>
+                </tarjetas>
+            </bloque>
+            <bloque id="wifi" titulo="Estándares Wi-Fi">
+                <tabla titulo="Evolución del Wi-Fi">
+                    <col nombre="Estándar" />
+                    <col nombre="Frecuencia" />
+                    <col nombre="Velocidad / Notas" />
+                    <fila>
+                        <c>802.11b/g</c>
+                        <c>2.4 GHz</c>
+                        <c>Hasta 54 Mbps; banda saturada y obsoleto.</c>
+                    </fila>
+                    <fila>
+                        <c>802.11n (Wi‑Fi 4)</c>
+                        <c>2.4 y 5 GHz</c>
+                        <c>Hasta 600 Mbps; introdujo MIMO.</c>
+                    </fila>
+                    <fila>
+                        <c>802.11ac (Wi‑Fi 5)</c>
+                        <c>5 GHz</c>
+                        <c>Hasta 3.5 Gbps; MU‑MIMO y beamforming.</c>
+                    </fila>
+                    <fila>
+                        <c>802.11ax (Wi‑Fi 6/6E)</c>
+                        <c>2.4, 5 y 6 GHz</c>
+                        <c>Hasta 9.6 Gbps; mejor eficiencia en entornos densos.</c>
+                    </fila>
+                </tabla>
+            </bloque>
+            <bloque id="componentesTabla" titulo="Resumen de componentes">
+                <tabla>
+                    <col nombre="Medio" />
+                    <col nombre="Tipo" />
+                    <col nombre="Uso" />
+                    <fila>
+                        <c>Cable Par Trenzado (UTP)</c>
+                        <c>Guiado (Cobre)</c>
+                        <c>Redes LAN de oficinas, conexión de PC a switch.</c>
+                    </fila>
+                    <fila>
+                        <c>Fibra Óptica</c>
+                        <c>Guiado (Luz)</c>
+                        <c>Redes troncales WAN, conexiones entre edificios o ciudades.</c>
+                    </fila>
+                    <fila>
+                        <c>Wi-Fi (802.11)</c>
+                        <c>No guiado (Radio)</c>
+                        <c>Dispositivos móviles, áreas comunes.</c>
+                    </fila>
+                    <fila>
+                        <c>Microondas</c>
+                        <c>No guiado (Ondas)</c>
+                        <c>Conexiones punto a punto sin cable entre edificios distantes.</c>
+                    </fila>
+                </tabla>
+            </bloque>
+        </seccion>
+    </secciones>
+</tema>
